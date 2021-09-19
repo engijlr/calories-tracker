@@ -1,2 +1,10 @@
-# calories-tracker
-Application that allows the user to keep track of their daily calorie consumption.
+
+# Calories Tracker
+
+
+Application developed with vanilla JavaScript, which allows the calculation of total calories, according to the information provided by the user and also allows to edit, delete and maintain the information in the local storage.
+## Authors
+
+- [@engijlr](https://github.com/engijlr)
+
+  
