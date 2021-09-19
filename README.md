@@ -9,6 +9,6 @@ Application developed with vanilla JavaScript, which allows the calculation of t
   
 ## Demo
 
-You can see a demo [here](https://github.com/engijlr)
+You can see a demo [here](https://engijlr.github.io/calories-tracker/)
 
 
