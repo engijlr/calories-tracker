@@ -1,4 +1,3 @@
-
 # Calories Tracker
 
 
@@ -8,3 +7,8 @@ Application developed with vanilla JavaScript, which allows the calculation of t
 - [@engijlr](https://github.com/engijlr)
 
   
+## Demo
+
+You can see a demo [here](https://github.com/engijlr)
+
+
