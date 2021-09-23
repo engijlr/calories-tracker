@@ -314,14 +314,27 @@ class ButtonsActions {
   }
 
   static itemDeleteSubmit(e) {
-    UIController.deleteFromUI(data.currentItem.id);
-    ItemsController.deleteItemfromData(data.currentItem);
-    StorageController.deleteFromLS(data.currentItem.id);
-    UIController.cleanInputs();
-    ItemsController.sumCalories();
-    UIController.showTotalCalories(data.totalCalories);
-    UIController.initialState();
     e.preventDefault();
+
+    Swal.fire({
+      title: "Do you want to delete this item?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+        UIController.deleteFromUI(data.currentItem.id);
+        ItemsController.deleteItemfromData(data.currentItem);
+        StorageController.deleteFromLS(data.currentItem.id);
+        UIController.cleanInputs();
+        ItemsController.sumCalories();
+        UIController.showTotalCalories(data.totalCalories);
+        UIController.initialState();
+      }
+    });
   }
 
   static itemBackSubmit(e) {
@@ -329,13 +342,32 @@ class ButtonsActions {
     UIController.initialState();
   }
 
-  static itemClearSubmit() {
-    UIController.deleteAllFromUI();
-    StorageController.deleteAllFromLS();
-    data.items = [];
-    data.totalCalories = 0;
-    UIController.showItemsList(data.items);
-    UIController.showTotalCalories(data.totalCalories);
+  static itemClearSubmit(e) {
+    e.preventDefault();
+
+    if (!data.items.length) {
+      Swal.fire("There is nothing to delete");
+    } else {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Deleted!", "Your data has been deleted.", "success");
+          UIController.deleteAllFromUI();
+          StorageController.deleteAllFromLS();
+          data.items = [];
+          data.totalCalories = 0;
+          UIController.showItemsList(data.items);
+          UIController.showTotalCalories(data.totalCalories);
+        }
+      });
+    }
   }
 }
 
