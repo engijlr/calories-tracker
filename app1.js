@@ -275,7 +275,7 @@ class ButtonsActions {
       ItemsController.sumCalories();
       UIController.showTotalCalories(data.totalCalories);
     } else {
-      alert("You have to fill the inputs");
+      Swal.fire("You need to enter the data!");
     }
   }
 
@@ -308,7 +308,7 @@ class ButtonsActions {
       UIController.showTotalCalories(data.totalCalories);
       UIController.initialState();
     } else {
-      alert("You have to fill the inputs");
+      Swal.fire("You need to fill in the form");
     }
     e.preventDefault();
   }

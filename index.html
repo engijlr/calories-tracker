@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Calories Tracker</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
 
@@ -20,7 +22,8 @@
             <label>Calories</label>
             <input type="number" class="input" id="calories" placeholder="Add calories" autocomplete="off">
         </div>
-        <div id="buttons">
+        <section>
+          <div id="buttons">
             <button class="btn" id="addBtn">Add item</button>
             <button class="btn" id="clear">Clear all</button>
             <button class="btn" id="updateBtn">Update item</button>
@@ -31,12 +34,16 @@
         <h2>Total calories: <span id="total"></span> cal</h2>
 
 
-      <ul class="list" id="list"></ul>
+        <ul class="list" id="list"></ul>
+
+        </section>
+        
     </form>
 
 
     <script src="app1.js"></script>
     <script src="https://kit.fontawesome.com/583d8477ee.js" crossorigin="anonymous"></script>
+    
 
   </body>
 </html>
